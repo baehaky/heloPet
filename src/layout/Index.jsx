@@ -61,13 +61,13 @@ function Index() {
             <div className="flex flex-col md:flex-row mt-5 gap-x-3">
               <button
                 type="button"
-                class="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
+                className="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
               >
                 Daftar
               </button>
               <button
                 type="button"
-                class="text-white hover:text-blue-600 border border-white hover:bg-white/75 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
+                className="text-white hover:text-blue-600 border border-white hover:bg-white/75 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
               >
                 Masuk
               </button>
