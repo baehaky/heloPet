@@ -44,7 +44,7 @@ function Index() {
   }
   return (
     <>
-      <section className="py-10 xl:py-44 bg-blue-600">
+      <section className="py-10 xl:py-44 bg-teal-400">
         <div className="flex justify-center items-center flex-col md:flex-row gap-y-10">
           <motion.div
             initial={{ opacity: 0 }}
@@ -53,21 +53,21 @@ function Index() {
             className="mx-5 xl:mx-32"
           >
             <h1 className="xl:text-5xl lg:text-4xl font-bold text-white">
-              Jaga <span className="text-yellow-400 underline"> Kesehatan</span>{" "}
+              Jaga <span className="text-yellow-200 underline"> Kesehatan</span>{" "}
               Hewan Kesayangan Anda dengan{" "}
-              <span className="text-yellow-400"> Melindungi </span> Mereka dari
-              Berbagai <span className="text-yellow-400">Penyakit.</span>
+              <span className="text-yellow-200"> Melindungi </span> Mereka dari
+              Berbagai <span className="text-yellow-200">Penyakit.</span>
             </h1>
             <div className="flex flex-col md:flex-row mt-5 gap-x-3">
               <button
                 type="button"
-                className="text-yellow-400 hover:text-white border border-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
+                className="text-yellow-200 hover:text-white border-2 border-yellow-200 hover:bg-yellow-300 focus:ring-8 text-lg focus:outline-none focus:ring-yellow-200 font-bold rounded-lg px-5 py-2.5 text-center me-3 mb-3"
               >
                 Daftar
               </button>
               <button
                 type="button"
-                className="text-white hover:text-blue-600 border border-white hover:bg-white/75 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 "
+                className="text-white hover:text-black border-2 border-white hover:bg-white/75 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 "
               >
                 Masuk
               </button>
