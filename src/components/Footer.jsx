@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
       <Wave
-        fill="rgb(45 212 191)"
+        fill="rgb(0, 211, 233)"
         paused={false}
         style={{ display: "flex" }}
         options={{
