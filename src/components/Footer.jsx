@@ -15,7 +15,7 @@ export default function Footer() {
           points: 4,
         }}
       />
-      <footer className="bg-teal-400 -mt-1">
+      <footer className="bg-[rgb(0, 211, 233)] -mt-1">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <h1 className="self-center text-2xl font-semibold whitespace-nowrap text-white">
