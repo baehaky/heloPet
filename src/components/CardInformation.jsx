@@ -34,16 +34,16 @@ export default function CardInformation() {
             </p>
           </div>
         </div>
-        <div className="flex justify-center lg:ml-20 flex-row-reverse">
+        <div className="flex justify-center flex-row-reverse">
           <div className="w-full hidden lg:block">
             <img
               src={dog}
-              className="w-[300px] ml-5 drop-shadow-[25px_30px_20px_rgba(255,255,255,0.1)]"
+              className="w-[300px] ml-36 drop-shadow-[25px_30px_20px_rgba(255,255,255,0.1)]"
               alt="Cat"
             />
           </div>
-          <div className="w-full flex flex-col gap-6">
-            <h1 className="text-2xl md:text-4xl text-white font-semibold">
+          <div className="w-full flex flex-col gap-y-6">
+            <h1 className="text-2xl md:text-4xl text-white  font-semibold">
               Penyakit yang biasa di derita oleh anjing
             </h1>
             <p className="text-sm sm:text-xl text-white underline-offset-2 underline">
