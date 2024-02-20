@@ -44,22 +44,22 @@ export default function CardInformation() {
           </div>
           <div className="w-full flex flex-col gap-6">
             <h1 className="text-2xl md:text-4xl text-white font-semibold">
-              Penyakit yang biasa di derita oleh kucing
+              Penyakit yang biasa di derita oleh anjing
             </h1>
             <p className="text-sm sm:text-xl text-white underline-offset-2 underline">
-              1. Kutu kucing
+              1. Infeksi Telinga
             </p>
             <p className="text-sm sm:text-xl text-white underline-offset-2 underline">
-              2. Cacingan
+              2. Infeksi Cacing
             </p>
             <p className="text-sm sm:text-xl text-white underline-offset-2 underline">
-              3. Ringworm
+              3. Diare
             </p>
             <p className="text-sm sm:text-xl text-white underline-offset-2 underline">
-              4. Feline panleukopenia virus (FPV)
+              4. Distemper
             </p>
             <p className="text-sm sm:text-xl text-white underline-offset-2 underline">
-              5. Infeksi saluran pernapasan atas
+              5. Kanker atau Tumor Kulit
             </p>
           </div>
         </div>
