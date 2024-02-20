@@ -47,7 +47,7 @@ export default function Footer() {
           <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <span className="block text-sm text-white sm:text-center ">
             © 2023{" "}
-            <a href="https://flowbite.com/" className="hover:underline">
+            <a href="https://Hellopet.netlify.app/" className="hover:underline">
               HellowPet™
             </a>
             . All Rights Reserved.
