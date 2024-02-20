@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
       <Wave
-        fill="rgb(20 184 166)"
+        fill="rgb(22 189 202)"
         paused={false}
         style={{ display: "flex" }}
         options={{
@@ -48,7 +48,7 @@ export default function Footer() {
           <span className="block text-sm text-white sm:text-center ">
             © 2023{" "}
             <a href="https://flowbite.com/" className="hover:underline">
-              Flowbite™
+              HellowPet™
             </a>
             . All Rights Reserved.
           </span>

@@ -4,29 +4,30 @@ function ErrorPage() {
   //   const error = useRouteError();
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center flex-col bg-rose-900">
-        <h1 className="text-9xl flex text-white font-mono">
+      <div className="min-h-screen flex items-center justify-center flex-col bg-teal-400">
+        <h1 className="text-9xl flex text-white font-mono font-extrabold drop-shadow-xl">
           4
           <span>
             <svg
+              className="drop-shadow-xl"
               fill="#ffffff"
               height="140px"
               width="100px"
               version="1.1"
               id="Capa_1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
               viewBox="0 0 436.98 436.98"
-              xml:space="preserve"
+              xmlSpace="preserve"
               stroke="#000000"
-              stroke-width="0.00436979"
+              strokeWidth="0.00436979"
               transform="rotate(0)"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
@@ -43,11 +44,11 @@ function ErrorPage() {
           </span>
           4
         </h1>
-        <p className="text-white font-serif font-medium">
+        <p className="text-white font-serif font-bold">
           Sorry, something went wrong.
         </p>
         <Link
-          className="border  py-1.5 px-5 mt-5 rounded-sm hover:bg-white hover:text-black ease-in-out delay-100 hover:rounded-full text-white font-mono font-bold"
+          className="border  py-1.5 px-5 mt-5 rounded-sm hover:bg-white hover:text-black ease-in-out delay-100 hover:rounded-full text-white font-mono font-bold uppercase"
           to="/"
         >
           {" "}
