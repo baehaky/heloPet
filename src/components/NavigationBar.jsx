@@ -121,7 +121,7 @@ export default function NavigationBar() {
               </li>
               <li>
                 <NavLink
-                  to="menu"
+                  to="artikel"
                   className={({ isActive }) =>
                     isActive
                       ? "block py-2 px-3 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
@@ -129,18 +129,6 @@ export default function NavigationBar() {
                   }
                 >
                   Artikel
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="about"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "block py-2 px-3 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
-                      : " block py-2 px-3 text-gray-900 rounded font-medium font-serif hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
-                  }
-                >
-                  Tentang Kami
                 </NavLink>
               </li>
               <li>
@@ -157,12 +145,13 @@ export default function NavigationBar() {
               </li>
               <li></li>
             </ul>
-            <button
+            <NavLink
+              to="login"
               type="button"
               className="text-white bg-teal-400 hover:bg-teal-500 font-medium rounded-lg text-sm px-4 py-2"
             >
               Sign-Up
-            </button>
+            </NavLink>
           </div>
         </div>
       </nav>

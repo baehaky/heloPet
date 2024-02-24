@@ -1,15 +1,15 @@
-import cat from "../assets/cat/cat_1.png";
-import dog from "../assets/dog/dog_1.png";
+import cat from "../assets/cat/cat.png";
+import dog from "../assets/dog/dog.png";
 import React from "react";
 export default function CardInformation() {
   return (
     <React.Fragment>
       <section className="flex flex-col w-full gap-y-20">
-        <div className="flex justify-center">
-          <div className="w-full hidden lg:block">
+        <div className="flex justify-center items-center">
+          <div className="flex w-full justify-center">
             <img
               src={cat}
-              className="w-[300px] ml-5 drop-shadow-[25px_30px_20px_rgba(255,255,255,0.1)]"
+              className="w-[400px] drop-shadow-[25px_30px_20px_rgba(255,255,255,0.1)]"
               alt="Cat"
             />
           </div>
@@ -34,11 +34,11 @@ export default function CardInformation() {
             </p>
           </div>
         </div>
-        <div className="flex justify-center flex-row-reverse">
-          <div className="w-full hidden lg:block">
+        <div className="flex justify-center items-center">
+          <div className="flex w-full justify-center">
             <img
               src={dog}
-              className="w-[300px] ml-36 drop-shadow-[25px_30px_20px_rgba(255,255,255,0.1)]"
+              className="w-[400px] drop-shadow-[25px_30px_20px_rgba(255,255,255,0.1)]"
               alt="Cat"
             />
           </div>
