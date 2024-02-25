@@ -64,7 +64,7 @@ export default function NavigationBar() {
               Beranda
             </NavLink>
             <NavLink
-              to="menu"
+              to="artikel"
               onClick={toggleMobileMenu}
               className={({ isActive }) =>
                 isActive
@@ -75,18 +75,7 @@ export default function NavigationBar() {
               Artikel
             </NavLink>
             <NavLink
-              to="about"
-              onClick={toggleMobileMenu}
-              className={({ isActive }) =>
-                isActive
-                  ? "block py-2 px-3 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
-                  : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
-              }
-            >
-              Tentang Kami
-            </NavLink>
-            <NavLink
-              to="contact"
+              to="bantuan"
               onClick={toggleMobileMenu}
               className={({ isActive }) =>
                 isActive
@@ -96,12 +85,12 @@ export default function NavigationBar() {
             >
               Bantuan
             </NavLink>
-            <button
-              type="button"
+            <NavLink
+              to="login"
               className="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
             >
               Sign-Up
-            </button>
+            </NavLink>
           </div>
 
           {/* Desktop menu */}
