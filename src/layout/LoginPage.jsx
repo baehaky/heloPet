@@ -3,8 +3,8 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-[100dvh]">
       <div className="flex flex-row w-full">
-        <div className="relative overflow-hidden md:flex  w-1/2 bg-gradient-to-tr from-teal-600 to-teal-900 i justify-around items-center hidden">
-          <div className="bg-white/15 py-10 px-10 rounded-lg backdrop-blur-lg">
+        <div className="relative overflow-hidden md:flex  w-1/2 bg-teal-400 i justify-around items-center hidden">
+          <div className=" py-10 px-10 rounded-lg backdrop-blur-lg">
             <div className="">
               <Link
                 to="/"
@@ -58,14 +58,14 @@ export default function LoginPage() {
               <input
                 type="text"
                 placeholder="Username"
-                className="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal"
+                className="flex px-3 py-2 md:px-4 md:py-3 border-2 border-teal-400 rounded-lg font-medium placeholder:font-normal"
               />
               <input
                 type="password"
                 placeholder="Password"
-                className="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal"
+                className="flex px-3 py-2 md:px-4 md:py-3 border-2 border-teal-400 rounded-lg font-medium placeholder:font-normal"
               />
-              <button className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white">
+              <button className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium hover:border-black active:bg-teal-700 bg-teal-400 text-white">
                 Konfirmasi
               </button>
               <div className="flex justify-center items-center ">

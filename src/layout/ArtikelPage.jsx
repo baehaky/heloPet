@@ -37,7 +37,7 @@ export default function ArtikelPage() {
   return (
     <section
       aria-label="Related articles"
-      className="py-8  bg-gray-50 dark:bg-gray-800"
+      className="py-8 bg-gray-50 dark:bg-gray-800"
     >
       <div className="px-4 mx-auto max-w-screen-xl">
         <div className="flex justify-between items-center mb-8">
@@ -46,10 +46,10 @@ export default function ArtikelPage() {
           </h2>
           <SearchBar />
         </div>
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {blogCard_.map((post) => (
-            <BlogCard key={post.id} {...post} />
-          ))}
+        <div className="grid place-items-center sm:place-items-start gap-12 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
+            {blogCard_.map((post) => (
+              <BlogCard key={post.id} {...post} />
+            ))}
         </div>
       </div>
     </section>

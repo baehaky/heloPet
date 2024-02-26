@@ -5,6 +5,8 @@ import { CircularProgress } from "@chakra-ui/react";
 import OurService from "../components/OurService";
 import Footer from "../components/Footer";
 import Information from "../components/Information";
+import CardShopping from "../components/CardShopping";
+import ShoppingPage from "../components/ShoppingPage";
 function Index() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -90,6 +92,7 @@ function Index() {
       </section>
       <OurService />
       <Information />
+      <ShoppingPage />
       <Footer />
     </>
   );

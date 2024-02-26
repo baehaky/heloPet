@@ -17,7 +17,7 @@ export default function NavigationBar() {
           >
             {/* <img src={LogoNavbar} className="h-14 md:h-20" alt="Logo" /> */}
             <span className="self-center text-xl md:text-2xl font-semibold whitespace-nowrap font-mono flex flex-col">
-              HaloPet
+              HelloPet
               <span className="h-[2px] bg-teal-400"></span>
             </span>
           </NavLink>
@@ -89,7 +89,7 @@ export default function NavigationBar() {
               to="login"
               className="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
             >
-              Sign-Up
+              Masuk
             </NavLink>
           </div>
 
@@ -139,7 +139,7 @@ export default function NavigationBar() {
               type="button"
               className="text-white bg-teal-400 hover:bg-teal-500 font-medium rounded-lg text-sm px-4 py-2"
             >
-              Sign-Up
+              Masuk
             </NavLink>
           </div>
         </div>
