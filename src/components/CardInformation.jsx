@@ -15,22 +15,22 @@ export default function CardInformation() {
             <h1 className="text-3xl font-medium tracking-wide text-white dark:text-white md:text-4xl">
               Penyakit Yang di Derita Oleh Anjing
             </h1>
-            <p className="mt-4 text-gray-300 font-medium tracking-wide">
+            <p className="mt-4 text-white font-medium tracking-wide">
               Percaya atau tidak, ada sejumlah penyakit yang rentan dialami
               anjing yang cukup umum dan dapat diobati dengan mudah. Sebagian
               besar penyakit ini tidak serius, namun, jika tidak terdeteksi dan
               karena itu tidak diobati, beberapa berpotensi menimbulkan masalah
               kesehatan yang serius pada anjing. berikut ini beberapa penyakit
               paling umum diderita anjing. <br />
-              <span className="font-semibold text-yellow-300">
+              <span className="font-semibold text-yellow-200">
                 1. Infeksi Gigi{" "}
               </span>{" "}
               <br />
-              <span className="font-semibold text-yellow-300">
+              <span className="font-semibold text-yellow-200">
                 2. Infeksi Telinga{" "}
               </span>
               <br />
-              <span className="font-semibold text-yellow-300">
+              <span className="font-semibold text-yellow-200">
                 3. Infeksi Kulit{" "}
               </span>{" "}
               <br />
@@ -57,22 +57,22 @@ export default function CardInformation() {
             <h1 className="text-3xl font-medium tracking-wide text-white dark:text-white md:text-4xl">
               Penyakit Yang di Derita Oleh Kucing
             </h1>
-            <p className="mt-4 text-gray-300 font-medium tracking-wide">
+            <p className="mt-4 text-white font-medium tracking-wide">
               Memelihara kucing memang tidak mudah. Selain memperhatikan
               makanannya, Anda juga perlu mengetahui perawatan yang tepat ketika
               kucing sakit. Ada beberapa penyakit yang umum menyerang kucing.
               Anda bisa menyimak informasi berikut untuk mengetahui jenis
               penyakit, gejala, serta pengobatan yang tepat. berikut ini
               beberapa penyakit paling umum diderita kucing. <br />
-              <span className="font-semibold text-yellow-300">
+              <span className="font-semibold text-yellow-200">
                 1. Kutu Kucing{" "}
               </span>{" "}
               <br />
-              <span className="font-semibold text-yellow-300">
+              <span className="font-semibold text-yellow-200">
                 2. Cacingan{" "}
               </span>
               <br />
-              <span className="font-semibold text-yellow-300">
+              <span className="font-semibold text-yellow-200">
                 3. Feline panleukopenia virus (FPV){" "}
               </span>{" "}
               <br />
