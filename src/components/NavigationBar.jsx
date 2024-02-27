@@ -75,7 +75,7 @@ export default function NavigationBar() {
               Artikel
             </NavLink>
             <NavLink
-              to="bantuan"
+              to="shop"
               onClick={toggleMobileMenu}
               className={({ isActive }) =>
                 isActive
@@ -83,7 +83,7 @@ export default function NavigationBar() {
                   : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
               }
             >
-              Bantuan
+              Pet Care
             </NavLink>
             <NavLink
               to="login"
@@ -122,14 +122,14 @@ export default function NavigationBar() {
               </li>
               <li>
                 <NavLink
-                  to="contact"
+                  to="shop"
                   className={({ isActive }) =>
                     isActive
                       ? "block py-2 px-3 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
                       : " block py-2 px-3 text-gray-900 rounded font-medium font-serif hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
                   }
                 >
-                  Bantuan
+                  Pet Care
                 </NavLink>
               </li>
               <li></li>

@@ -14,6 +14,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./index.css";
+import PetCarePage from "./components/PetCarePage.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<NavigationBar />}>
         <Route index element={<Index />} />
         <Route path="artikel" element={<ArtikelPage />} />
+        <Route path="shop" element={<PetCarePage />} />
       </Route>
       <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<RegisterPage />} />

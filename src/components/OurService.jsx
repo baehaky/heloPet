@@ -1,5 +1,8 @@
 import Card from "./Card";
 import { motion } from "framer-motion";
+import message from "../assets/7.png";
+import shop from "../assets/6.png";
+import doctor from "../assets/5.png";
 
 export default function OurService() {
   return (
@@ -10,9 +13,13 @@ export default function OurService() {
           <h1 className="text-3xl text-center">Layanan Kami</h1>
         </div>
         <div className="flex justify-center gap-x-10 gap-y-10 flex-wrap">
-          <Card angka={1} text={"Chat dengan dokter"} />
-          <Card angka={2} text={"Belanja kebutuhan pet anda"} />
-          <Card angka={3} text={"Bertemu dengan dokter favorit anda"} />
+          <Card angka={1} text={"Chat dengan dokter"} img={message} />
+          <Card angka={2} text={"Belanja kebutuhan pet anda"} img={shop} />
+          <Card
+            angka={3}
+            text={"Bertemu dengan dokter favorit anda"}
+            img={doctor}
+          />
         </div>
         <hr />
       </section>

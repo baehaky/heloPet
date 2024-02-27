@@ -29,7 +29,7 @@ export default function ShoppingPage() {
       className="py-8 bg-gray-50 dark:bg-gray-800"
     >
       <div className="px-4 mx-auto max-w-screen-xl">
-        <h2 className="text-5xl font-bold mb-5 text-center text-teal-500 dark:text-white">
+        <h2 className="text-5xl font-bold mb-5 text-center text-teal-400 dark:text-white">
           Let’s get to finding their food.
         </h2>
         <div className="grid place-items-center gap-12 grid-cols-1 sm:grid-cols-3 lg:grid-cols-4">
