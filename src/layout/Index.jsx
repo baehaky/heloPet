@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DoctorImg from "../assets/hero-unscreen.gif";
+import DoctorImg from "../assets/output-onlinegiftools.gif";
 import { motion } from "framer-motion";
 import { CircularProgress } from "@chakra-ui/react";
 import OurService from "../components/OurService";
