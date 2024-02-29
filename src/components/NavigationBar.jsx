@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
-
+import logo from "../assets/10.png";
 export default function NavigationBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -13,13 +13,9 @@ export default function NavigationBar() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLink
             to="/"
-            className="flex items-center space-x-3 rtl:space-x-reverse md:w-[350px] "
+            className="flex items-center space-x-3 rtl:space-x-reverse "
           >
-            {/* <img src={LogoNavbar} className="h-14 md:h-20" alt="Logo" /> */}
-            <span className="self-center text-xl md:text-2xl font-semibold whitespace-nowrap font-mono flex flex-col">
-              HelloPet
-              <span className="h-[2px] bg-teal-400"></span>
-            </span>
+            <img src={logo} className="w-1/6" />
           </NavLink>
 
           {/* Mobile menu button */}

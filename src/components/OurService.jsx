@@ -3,12 +3,19 @@ import { motion } from "framer-motion";
 import message from "../assets/7.png";
 import shop from "../assets/6.png";
 import doctor from "../assets/5.png";
+import bg_ from "../assets/22.png";
+
 
 export default function OurService() {
+  const backgroundImageStyle = {
+    backgroundImage: `url(${bg_})`,
+  };
   return (
     <>
-      <section className="py-11 flex flex-col px-24 gap-y-5">
-        <hr />
+      <section
+        className="flex flex-col px-24 gap-y-5 py-11 pb-5"
+        style={backgroundImageStyle}
+      >
         <div>
           <h1 className="text-3xl text-center">Layanan Kami</h1>
         </div>
@@ -21,7 +28,6 @@ export default function OurService() {
             img={doctor}
           />
         </div>
-        <hr />
       </section>
     </>
   );

@@ -1,6 +1,6 @@
 import Wave from "react-wavify";
 import { Link } from "react-router-dom";
-import logo from "../assets/5.png";
+import logo from "../assets/9.png";
 
 export default function Footer() {
   return (
@@ -19,13 +19,8 @@ export default function Footer() {
       <footer className="bg-teal-400 -mt-1">
         <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
-            <div className="flex gap-x-2">
-              <h1 className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-                HelloPet
-              </h1>
-              <div className="w-1/12">
-                <img src={logo} />
-              </div>
+            <div className="w-1/12">
+              <img src={logo} />
             </div>
             <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 ">
               <li>
