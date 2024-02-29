@@ -1,8 +1,7 @@
-import food from "../assets/8.png";
 export default function CardShopping({ products }) {
   return (
     <div className="bg-white shadow-md rounded-lg max-w-xs dark:bg-gray-800 dark:border-gray-700">
-      <img className="rounded-t-lg p-8" src={food} alt="product image" />
+      <img className="rounded-t-lg p-8" src={products.image} alt="product image" />
       <div className="px-5 pb-5">
         <h3 className="text-gray-900 text-center font-semibold text-lg tracking-tight dark:text-white">
           {products.name}

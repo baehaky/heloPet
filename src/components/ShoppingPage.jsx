@@ -3,6 +3,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import food from "../assets/8.png";
+import drug from "../assets/12.png";
 export default function ShoppingPage() {
   const arrowStyle = {
     border: 0,
@@ -51,26 +53,43 @@ export default function ShoppingPage() {
       id: 1,
       name: "Felibite Mother and Kitten",
       price: 50,
+      image: food,
     },
     {
       id: 2,
       name: "Royal Canin",
       price: 100,
+      image: food,
     },
     {
       id: 3,
       name: "Nature’s Protection ",
       price: 120,
+      image: food,
     },
     {
       id: 4,
       name: "Wellness CORE Puppy ",
       price: 150,
+      image: food,
     },
     {
       id: 5,
       name: "Wellness CORE Puppy ",
       price: 150,
+      image: food,
+    },
+    {
+      id: 6,
+      name: "Vitamin B",
+      price: 150,
+      image: drug,
+    },
+    {
+      id: 7,
+      name: "Vitamin C",
+      price: 150,
+      image: drug,
     },
   ];
   return (
