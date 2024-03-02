@@ -63,20 +63,14 @@ function Index() {
               <span className="text-yellow-200"> Melindungi </span> Mereka dari
               Berbagai <span className="text-yellow-200">Penyakit.</span>
             </h1>
-            <div className="flex flex-col md:flex-row mt-5 gap-x-3">
+            {/* <div className="flex flex-col md:flex-row mt-5 gap-x-3">
               <button
                 type="button"
-                className="text-yellow-200 hover:text-white border-2 border-yellow-200 hover:bg-yellow-300 focus:ring-4 text-lg focus:outline-none focus:ring-yellow-200 font-bold rounded-lg px-5 py-2.5 text-center me-2 mb-2"
+                className="text-yellow-200 hover:text-white border-2 border-yellow-200 hover:bg-yellow-300 focus:ring-4 text-lg focus:outline-none focus:ring-yellow-200 font-bold rounded-lg px-20 py-2.5 text-center me-2 mb-2"
               >
                 Daftar
               </button>
-              <button
-                type="button"
-                className="text-white border-2 border-white hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-slate-200 font-bold rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2 "
-              >
-                Masuk
-              </button>
-            </div>
+            </div> */}
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}

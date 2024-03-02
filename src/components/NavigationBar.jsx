@@ -85,7 +85,7 @@ export default function NavigationBar() {
               to="login"
               className="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
             >
-              Masuk
+              login
             </NavLink>
           </div>
 
@@ -135,7 +135,7 @@ export default function NavigationBar() {
               type="button"
               className="text-white bg-teal-400 hover:bg-teal-500 font-medium rounded-lg text-sm px-4 py-2"
             >
-              Masuk
+              login
             </NavLink>
           </div>
         </div>
