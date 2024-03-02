@@ -5,7 +5,6 @@ import shop from "../assets/6.png";
 import doctor from "../assets/5.png";
 import bg_ from "../assets/22.png";
 
-
 export default function OurService() {
   const backgroundImageStyle = {
     backgroundImage: `url(${bg_})`,
@@ -17,7 +16,7 @@ export default function OurService() {
         style={backgroundImageStyle}
       >
         <div>
-          <h1 className="text-3xl text-center">Layanan Kami</h1>
+          <h1 className="text-4xl text-center font-semibold">Layanan Kami</h1>
         </div>
         <div className="flex justify-center gap-x-10 gap-y-10 flex-wrap">
           <Card angka={1} text={"Chat dengan dokter"} img={message} />

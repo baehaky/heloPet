@@ -3,10 +3,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import food1 from "../assets/15.png"
-import food2 from "../assets/16.png"
-import food3 from "../assets/18.png"
-import food4 from "../assets/8.png"
+import food1 from "../assets/15.png";
+import food2 from "../assets/16.png";
+import food3 from "../assets/18.png";
+import food4 from "../assets/8.png";
 import drug1 from "../assets/12.png";
 import drug2 from "../assets/11.png";
 export default function ShoppingPage() {
@@ -97,7 +97,7 @@ export default function ShoppingPage() {
     >
       <div className="px-4 mx-auto max-w-screen-xl">
         <h2 className="text-5xl font-bold mb-5 text-center text-teal-400 dark:text-white">
-          Let’s get to finding their food.
+          Penuhi kebutuhan mereka dengan baik!
         </h2>
         <Carousel
           responsive={responsive}
