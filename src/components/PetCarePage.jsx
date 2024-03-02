@@ -1,5 +1,8 @@
 import CardShopping from "./CardShopping";
-
+import image1 from "../assets/15.png"
+import image2 from "../assets/16.png"
+import image3 from "../assets/18.png"
+import image4 from "../assets/8.png"
 export default function PetCarePage() {
   const options = {
     preferred: [
@@ -18,21 +21,25 @@ export default function PetCarePage() {
         id: 1,
         name: "Felibite Mother and Kitten",
         price: 50,
+        image: image1,
       },
       {
         id: 2,
         name: "Royal Canin",
         price: 100,
+        image: image2
       },
       {
         id: 3,
         name: "Nature’s Protection ",
         price: 120,
+        image: image3
       },
       {
         id: 4,
         name: "Wellness CORE Puppy ",
         price: 150,
+        image: image4
       },
     ],
   };
