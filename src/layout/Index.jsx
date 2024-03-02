@@ -49,7 +49,7 @@ function Index() {
   }
   return (
     <>
-      <section className="py-10 xl:py-24 bg-teal-400">
+      <section className="py-10 xl:py-36 bg-teal-400">
         <div className="flex justify-center items-center flex-col md:flex-row gap-y-10">
           <motion.div
             initial={{ opacity: 0 }}
