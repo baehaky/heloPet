@@ -82,7 +82,7 @@ export default function AddShoppingCart({ cart, setCart, handleChange }) {
                       <input
                         className="h-8 w-8 border bg-white text-center text-xs outline-none"
                         type="number"
-                        defaultValue={2}
+                        defaultValue={1}
                         min={1}
                       />
                       <span className="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-teal-500 hover:text-teal-50">
