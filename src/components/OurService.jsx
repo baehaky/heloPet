@@ -22,12 +22,16 @@ export default function OurService() {
           <Link to="chat">
             <Card angka={1} text={"Chat dengan dokter"} img={message} />
           </Link>
-          <Card angka={2} text={"Belanja kebutuhan pet anda"} img={shop} />
-          <Card
-            angka={3}
-            text={"Bertemu dengan dokter favorit anda"}
-            img={doctor}
-          />
+          <Link to="shop">
+            <Card angka={2} text={"Belanja kebutuhan pet anda"} img={shop} />
+          </Link>
+          <Link to="favoritDoctor">
+            <Card
+              angka={3}
+              text={"Bertemu dengan dokter favorit anda"}
+              img={doctor}
+            />
+          </Link>
         </div>
       </section>
     </>

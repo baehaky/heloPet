@@ -1,6 +1,7 @@
 import { Outlet, NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import doctor from "../assets/doctor.png"
 export default function NavigationChat() {
   return (
     <>
@@ -51,7 +52,7 @@ export default function NavigationChat() {
               >
                 <button className="flex items-center">
                   <div className="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full">
-                    H
+                    <img src={doctor} />
                   </div>
                   <div className="ml-2 text-sm font-semibold">
                     Dokter HelloPet

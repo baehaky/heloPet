@@ -19,6 +19,7 @@ import Chat from "./components/Chat.jsx";
 import NavigationChat from "./components/NavigationChat.jsx";
 import ChatPage from "./layout/ChatPage.jsx";
 import AddShoppingCart from "./components/AddShoppingCart.jsx";
+import ListFavoritDoctor from "./components/ListFavoritDoctor.jsx";
 
 export default function App() {
   const [cart, setCart] = useState([]);
@@ -41,6 +42,7 @@ export default function App() {
         <Route path="/" element={<NavigationBar size={cart.length} />}>
           <Route index element={<Index handleClick={handleClick} />} />
           <Route path="artikel" element={<ArtikelPage />} />
+          <Route path="favoritDoctor" element={<ListFavoritDoctor />} />
           <Route
             path="shop"
             element={<PetCarePage handleClick={handleClick} />}
@@ -58,7 +60,7 @@ export default function App() {
         </Route>
         <Route path="chat" element={<NavigationChat />}>
           <Route index element={<ChatPage />} />
-          <Route path="id1" element={<Chat />} />
+          <Route path=":id" element={<Chat />} />
         </Route>
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
