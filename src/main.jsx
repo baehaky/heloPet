@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import Index from "./layout/Index.jsx";
+import Index from "./layout/index.jsx";
 import ErrorPage from "./layout/ErrorPage.jsx";
 import NavigationBar from "./components/NavigationBar.jsx";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -15,6 +15,10 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import PetCarePage from "./components/PetCarePage.jsx";
+import Chat from "./components/Chat.jsx";
+import NavigationChat from "./components/NavigationChat.jsx";
+import ChatPage from "./layout/ChatPage.jsx";
+import AddShoppingCart from "./components/AddShoppingCart.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,6 +27,11 @@ const router = createBrowserRouter(
         <Route index element={<Index />} />
         <Route path="artikel" element={<ArtikelPage />} />
         <Route path="shop" element={<PetCarePage />} />
+        <Route path="cart" element={<AddShoppingCart />} />
+      </Route>
+      <Route path="chat" element={<NavigationChat />}>
+        <Route index element={<ChatPage />} />
+        <Route path="id1" element={<Chat />} />
       </Route>
       <Route path="login" element={<LoginPage />} />
       <Route path="register" element={<RegisterPage />} />

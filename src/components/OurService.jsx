@@ -4,7 +4,7 @@ import message from "../assets/7.png";
 import shop from "../assets/6.png";
 import doctor from "../assets/5.png";
 import bg_ from "../assets/22.png";
-
+import { Link } from "react-router-dom";
 export default function OurService() {
   const backgroundImageStyle = {
     backgroundImage: `url(${bg_})`,
@@ -19,7 +19,9 @@ export default function OurService() {
           <h1 className="text-4xl text-center font-semibold">Layanan Kami</h1>
         </div>
         <div className="flex justify-center gap-x-10 gap-y-10 flex-wrap">
-          <Card angka={1} text={"Chat dengan dokter"} img={message} />
+          <Link to="chat">
+            <Card angka={1} text={"Chat dengan dokter"} img={message} />
+          </Link>
           <Card angka={2} text={"Belanja kebutuhan pet anda"} img={shop} />
           <Card
             angka={3}

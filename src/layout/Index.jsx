@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Information from "../components/Information";
 import CardShopping from "../components/CardShopping";
 import ShoppingPage from "../components/ShoppingPage";
+import LoginPage from "./LoginPage";
 function Index() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -16,6 +17,12 @@ function Index() {
       setIsLoading(false);
     }, 2000);
   }, []);
+
+  // const [token, setToken] = useState();
+
+  // if (!token) {
+  //   return <LoginPage setToken={setToken} />;
+  // }
 
   if (isLoading) {
     return (
@@ -63,14 +70,6 @@ function Index() {
               <span className="text-yellow-200"> Melindungi </span> Mereka dari
               Berbagai <span className="text-yellow-200">Penyakit.</span>
             </h1>
-            {/* <div className="flex flex-col md:flex-row mt-5 gap-x-3">
-              <button
-                type="button"
-                className="text-yellow-200 hover:text-white border-2 border-yellow-200 hover:bg-yellow-300 focus:ring-4 text-lg focus:outline-none focus:ring-yellow-200 font-bold rounded-lg px-20 py-2.5 text-center me-2 mb-2"
-              >
-                Daftar
-              </button>
-            </div> */}
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
