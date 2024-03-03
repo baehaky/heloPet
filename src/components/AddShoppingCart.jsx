@@ -7,7 +7,6 @@ import drug1 from "../assets/12.png";
 import drug2 from "../assets/11.png";
 export default function AddShoppingCart({ cart, setCart, handleChange }) {
   const [price, setPrice] = useState(0);
-  conts [amount, set]
   const calculateTotalPrice = () => {
     let total = 0;
     data.forEach((product) => {
