@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import Index from "./layout/index.jsx";
+import Index from "./layout/Index.jsx";
 import ErrorPage from "./layout/ErrorPage.jsx";
 import NavigationBar from "./components/NavigationBar.jsx";
 import { ChakraProvider } from "@chakra-ui/react";
