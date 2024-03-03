@@ -20,28 +20,58 @@ import NavigationChat from "./components/NavigationChat.jsx";
 import ChatPage from "./layout/ChatPage.jsx";
 import AddShoppingCart from "./components/AddShoppingCart.jsx";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route path="/" element={<NavigationBar />}>
-        <Route index element={<Index />} />
-        <Route path="artikel" element={<ArtikelPage />} />
-        <Route path="shop" element={<PetCarePage />} />
-        <Route path="cart" element={<AddShoppingCart />} />
-      </Route>
-      <Route path="chat" element={<NavigationChat />}>
-        <Route index element={<ChatPage />} />
-        <Route path="id1" element={<Chat />} />
-      </Route>
-      <Route path="login" element={<LoginPage />} />
-      <Route path="register" element={<RegisterPage />} />
-      <Route path="*" element={<ErrorPage />} />
-    </>
-  )
-);
+export default function App() {
+  const [cart, setCart] = useState([]);
+  console.log(cart);
+  const handleClick = (item) => {
+    if (cart.indexOf(item) !== -1) return;
+    setCart([...cart, item]);
+  };
+  const handleChange = (item, d) => {
+    const ind = cart.indexOf(item);
+    const arr = cart;
+    arr[ind].amount += d;
+
+    if (arr[ind].amount === 0) arr[ind].amount = 1;
+    setCart([...arr]);
+  };
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route path="/" element={<NavigationBar size={cart.length} />}>
+          <Route index element={<Index handleClick={handleClick} />} />
+          <Route path="artikel" element={<ArtikelPage />} />
+          <Route path="shop" element={<PetCarePage />} />
+          <Route
+            path="cart"
+            element={
+              <AddShoppingCart
+                cart={cart}
+                setCart={setCart}
+                handleChange={handleChange}
+              />
+            }
+          />
+        </Route>
+        <Route path="chat" element={<NavigationChat />}>
+          <Route index element={<ChatPage />} />
+          <Route path="id1" element={<Chat />} />
+        </Route>
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </>
+    )
+  );
+  return (
+    <React.Fragment>
+      <RouterProvider router={router} />
+    </React.Fragment>
+  );
+}
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );

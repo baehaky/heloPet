@@ -8,7 +8,7 @@ import Information from "../components/Information";
 import CardShopping from "../components/CardShopping";
 import ShoppingPage from "../components/ShoppingPage";
 import LoginPage from "./LoginPage";
-function Index() {
+function Index({ handleClick }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -85,7 +85,7 @@ function Index() {
       </section>
       <OurService />
       <Information />
-      <ShoppingPage />
+      <ShoppingPage handleClick={handleClick} />
       <Footer />
     </>
   );

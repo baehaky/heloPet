@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/10.png";
-export default function NavigationBar() {
+export default function NavigationBar(props) {
   const [isAuthenticated, setisAuthenticated] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -155,7 +155,7 @@ export default function NavigationBar() {
                           : " block py-2 px-3 text-gray-900 rounded font-medium font-serif hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
                       }
                     >
-                      Keranjang
+                      Keranjang {props.size}
                     </NavLink>
                   </li>
                   {/* <li>

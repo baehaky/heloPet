@@ -5,8 +5,9 @@ import food3 from "../assets/18.png";
 import food4 from "../assets/8.png";
 import drug1 from "../assets/12.png";
 import drug2 from "../assets/11.png";
-export default function AddShoppingCart() {
-  const [totalPrice, setTotalPrice] = useState(0);
+export default function AddShoppingCart({ cart, setCart, handleChange }) {
+  const [price, setPrice] = useState(0);
+  conts [amount, set]
   const calculateTotalPrice = () => {
     let total = 0;
     data.forEach((product) => {
@@ -15,9 +16,21 @@ export default function AddShoppingCart() {
     setTotalPrice(total);
   };
 
+  const handleRemove = (id) => {
+    const arr = cart.filter((item) => item.id !== id);
+    setCart(arr);
+    handlePrice();
+  };
+
+  const handlePrice = () => {
+    let ans = 0;
+    cart.map((item) => (ans += 1 * item.price));
+    setPrice(ans);
+  };
+
   useEffect(() => {
-    calculateTotalPrice();
-  }, []);
+    handlePrice();
+  });
 
   const data = [
     {
@@ -45,7 +58,7 @@ export default function AddShoppingCart() {
         <h1 className="mb-10 text-center text-3xl font-bold ">Cart Items</h1>
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div className="rounded-lg md:w-2/3">
-            {data.map((product, index) => (
+            {cart.map((product, index) => (
               <div
                 className="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
                 key={product.id}
@@ -104,7 +117,7 @@ export default function AddShoppingCart() {
           <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
             <div className="mb-2 flex justify-between">
               <p className="text-gray-700">Subtotal</p>
-              <p className="text-gray-700">${totalPrice}</p>
+              <p className="text-gray-700">${price}</p>
             </div>
             <div className="flex justify-between">
               <p className="text-gray-700">Shipping</p>
@@ -114,9 +127,7 @@ export default function AddShoppingCart() {
             <div className="flex justify-between">
               <p className="text-lg font-bold">Total</p>
               <div className="">
-                <p className="mb-1 text-lg font-bold">
-                  ${totalPrice + 4.99} USD
-                </p>
+                <p className="mb-1 text-lg font-bold">${price + 4.99} USD</p>
                 <p className="text-sm text-gray-700">including VAT</p>
               </div>
             </div>

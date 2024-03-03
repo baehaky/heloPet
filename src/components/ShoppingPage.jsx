@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import CardShopping from "./CardShopping";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -9,7 +10,17 @@ import food3 from "../assets/18.png";
 import food4 from "../assets/8.png";
 import drug1 from "../assets/12.png";
 import drug2 from "../assets/11.png";
-export default function ShoppingPage() {
+export default function ShoppingPage({ handleClick }) {
+  const [item, setItem] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  async function getData() {
+    setItem(data);
+  }
+
   const arrowStyle = {
     border: 0,
     color: "#000000",
@@ -104,9 +115,9 @@ export default function ShoppingPage() {
           customRightArrow={<CustomRight />}
           customLeftArrow={<CustomLeft />}
         >
-          {data.map((products, index) => (
-            <div className="m-5">
-              <CardShopping key={index} products={products} />
+          {item.map((products, index) => (
+            <div className="m-5" key={index}>
+              <CardShopping products={products} handleClick={handleClick} />
             </div>
           ))}
         </Carousel>
