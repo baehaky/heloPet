@@ -41,7 +41,10 @@ export default function App() {
         <Route path="/" element={<NavigationBar size={cart.length} />}>
           <Route index element={<Index handleClick={handleClick} />} />
           <Route path="artikel" element={<ArtikelPage />} />
-          <Route path="shop" element={<PetCarePage />} />
+          <Route
+            path="shop"
+            element={<PetCarePage handleClick={handleClick} />}
+          />
           <Route
             path="cart"
             element={

@@ -1,9 +1,19 @@
+import React, { useState, useEffect } from "react";
 import CardShopping from "./CardShopping";
-import image1 from "../assets/15.png"
-import image2 from "../assets/16.png"
-import image3 from "../assets/18.png"
-import image4 from "../assets/8.png"
-export default function PetCarePage() {
+import image1 from "../assets/15.png";
+import image2 from "../assets/16.png";
+import image3 from "../assets/18.png";
+import image4 from "../assets/8.png";
+export default function PetCarePage({ handleClick }) {
+  const [item, setItem] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  async function getData() {
+    setItem(options.products);
+  }
   const options = {
     preferred: [
       { id: 1, name: "Wet Food" },
@@ -27,19 +37,19 @@ export default function PetCarePage() {
         id: 2,
         name: "Royal Canin",
         price: 100,
-        image: image2
+        image: image2,
       },
       {
         id: 3,
         name: "Nature’s Protection ",
         price: 120,
-        image: image3
+        image: image3,
       },
       {
         id: 4,
         name: "Wellness CORE Puppy ",
         price: 150,
-        image: image4
+        image: image4,
       },
     ],
   };
@@ -75,7 +85,11 @@ export default function PetCarePage() {
 
             <div className="grid grid-cols-1 md:place-items-start place-items-center gap-8 mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {options.products.map((products) => (
-                <CardShopping key={products.id} products={products} />
+                <CardShopping
+                  key={products.id}
+                  products={products}
+                  handleClick={handleClick}
+                />
               ))}
             </div>
           </div>

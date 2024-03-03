@@ -7,6 +7,7 @@ import drug1 from "../assets/12.png";
 import drug2 from "../assets/11.png";
 export default function AddShoppingCart({ cart, setCart, handleChange }) {
   const [price, setPrice] = useState(0);
+  const [amount, setAmount] = useState(0);
   const calculateTotalPrice = () => {
     let total = 0;
     data.forEach((product) => {
@@ -23,7 +24,8 @@ export default function AddShoppingCart({ cart, setCart, handleChange }) {
 
   const handlePrice = () => {
     let ans = 0;
-    cart.map((item) => (ans += 1 * item.price));
+    setAmount(cart.length);
+    cart.map((item) => (ans += item.price));
     setPrice(ans);
   };
 
