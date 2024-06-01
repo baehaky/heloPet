@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 
+import toast, { Toaster } from "react-hot-toast";
+import PelangganRegis from "../components/registrasi/PelangganRegis";
+import PengusahaRegis from "../components/registrasi/PengusahaRegis";
 export default function RegisterPage() {
+  const navigate = useNavigate();
+
+  const [choose, setChoose] = useState("Pelanggan");
+
   return (
     <section className="min-h-screen flex items-stretch flex-row-reverse">
+      <Toaster />
       <div className="lg:flex w-1/2 hidden bg-teal-400 relative items-center">
         <div className="w-full px-24 z-10 text-white">
           <h1 className="text-5xl font-bold text-left tracking-wide">
-            Daftarkan segera akun kamu!
+            Daftarkan segera akun kamu
           </h1>
           <Link to="/">
             <button className="group relative mt-5 h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
@@ -18,60 +27,14 @@ export default function RegisterPage() {
           </Link>
         </div>
       </div>
-      <div className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0">
+      <div className="lg:w-2/3 w-full flex items-center justify-center text-center md:px-16 px-0 z-0">
         <div className="w-full py-6 z-20">
           <h1 className="my-6 text-black text-3xl font-bold">
-            Daftarkan Akun Kamu
+            Daftarkan Akun Kamu{" "}
           </h1>
-          <form action="" className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
-            <div className="pb-2 pt-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                className="block w-full p-4 text-lg rounded-sm "
-              />
-            </div>
-            <div className="pb-2 pt-4">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="block w-full p-4 text-lg rounded-sm "
-              />
-            </div>
-            <div className="pb-2 pt-4">
-              <input
-                type="number"
-                name="Phone"
-                placeholder="Phone"
-                className="block w-full p-4 text-lg rounded-sm "
-              />
-            </div>
-            <div className="pb-2 pt-4">
-              <input
-                type="text"
-                name="Address"
-                placeholder="Address"
-                className="block w-full p-4 text-lg rounded-sm "
-              />
-            </div>
-            <div className="pb-2 pt-4">
-              <input
-                className="block w-full p-4 text-lg rounded-sm "
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-              />
-            </div>
-
-            <div className="px-4 pb-2 pt-4">
-              <button className="uppercase block w-full p-4 text-lg rounded-full bg-teal-400 hover:bg-teal-600 focus:outline-none text-white">
-                Daftar
-              </button>
-            </div>
-          </form>
+          <div>
+            <PelangganRegis />
+          </div>
         </div>
       </div>
     </section>

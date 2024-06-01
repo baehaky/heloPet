@@ -1,41 +1,18 @@
+
 import React, { useState, useEffect, useRef } from "react";
-import logo from "../assets/doctor.png";
-import { useParams } from "react-router-dom";
-import useGetConversations from "../hooks/useGetConversations";
-import useConversation from "../zustand/useConversation";
-import useSendMessage from "../hooks/useSendMessage";
-import { useAuthContext } from "../context/AuthContext";
-import useGetMessages from "../hooks/useGetMessage";
-import MessagesClient from "./messagesClient";
-import useListenMessages from "../hooks/useListenMessage";
-export default function Chat(props) {
+
+import useGetMessages from "../../hooks/useGetMessage";
+import useListenMessages from "../../hooks/useListenMessage";
+import { useAuthContext } from "../../context/AuthContext";
+import useSendMessage from "../../hooks/useSendMessage";
+import MessagesClient from "./MessagesClient";
+
+export default function Chat() {
   useListenMessages();
   const { sendMessage } = useSendMessage();
+  const { messages, loading } = useGetMessages();
   const [message, setMessage] = useState("");
-  const [chat, setChat] = useState([]);
-  const [doctor, setdoctor] = useState([]);
-  const {
-    messages,
-    setMessages,
-    setSelectedConversation,
-    selectedConversation,
-  } = useConversation();
   const { authUser } = useAuthContext();
-  const { id } = useParams();
-
-  useEffect(() => {
-    fetch(
-      `http://localhost:5000/api/messages?receiverId=${selectedConversation?._id}&senderId=${authUser._id}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setChat(data);
-        setdoctor(props.Doctor);
-      })
-      .catch((error) => {
-        console.error("Error fetching doctors:", error);
-      });
-  }, [chat]);
 
   const send = async () => {
     console.log(authUser._id);
@@ -53,13 +30,9 @@ export default function Chat(props) {
               <div className="flex flex-col h-full">
                 <div className="grid grid-cols-12 gap-y-2">
                   <>
-                    {chat.length > 0 &&
-                      chat.map((msg) => (
-                        <MessagesClient
-                          key={msg._id}
-                          msg={msg}
-                          doctor={props.Doctor}
-                        />
+                    {messages.length > 0 &&
+                      messages.map((msg) => (
+                        <MessagesClient key={msg._id} msg={msg} />
                       ))}
                   </>
                 </div>

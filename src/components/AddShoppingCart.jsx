@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import food1 from "../assets/15.png";
 import food2 from "../assets/16.png";
-import food3 from "../assets/18.png";
-import food4 from "../assets/8.png";
-import drug1 from "../assets/12.png";
-import drug2 from "../assets/11.png";
+import PaymentLayout from "./paymentKeranjang/PaymentLayout";
 export default function AddShoppingCart({ cart, setCart, handleChange }) {
+  const [isOpen, setIsOpen] = useState(false);
   const [price, setPrice] = useState(0);
   const [amount, setAmount] = useState(0);
+
   const calculateTotalPrice = () => {
     let total = 0;
     data.forEach((product) => {
@@ -15,6 +14,31 @@ export default function AddShoppingCart({ cart, setCart, handleChange }) {
     });
     setTotalPrice(total);
   };
+
+  async function paymentGateWay() {
+
+
+    fetch("http://localhost:5000/api/payment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: 1,
+        total: price + 17000,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        window.snap.pay(data.token);
+        // toast.success("Payment transaction created successfully!");
+      })
+      .catch((error) => {
+        console.error("Error creating transaction:", error);
+        // Tampilkan pesan kesalahan
+        toast.error("Failed to create payment transaction");
+      });
+  }
 
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
@@ -32,6 +56,10 @@ export default function AddShoppingCart({ cart, setCart, handleChange }) {
   useEffect(() => {
     handlePrice();
   });
+
+  const trasactionMid = () => {
+    console.log("masuk");
+  };
 
   const data = [
     {
@@ -55,8 +83,10 @@ export default function AddShoppingCart({ cart, setCart, handleChange }) {
             '\n    @layer utilities {\n    input[type="number"]::-webkit-inner-spin-button,\n    input[type="number"]::-webkit-outer-spin-button {\n      -webkit-appearance: none;\n      margin: 0;\n    }\n  }\n',
         }}
       />
-      <div className="h-screen bg-yellow-200 pt-20">
-        <h1 className="mb-10 text-center text-3xl font-bold ">Cart Items</h1>
+      <div className="bg-yellow-200 pt-20">
+        <h1 className="mb-10 text-center text-3xl font-bold ">
+          Item Keranjang
+        </h1>
         <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
           <div className="rounded-lg md:w-2/3">
             {cart.map((product, index) => (
@@ -93,7 +123,7 @@ export default function AddShoppingCart({ cart, setCart, handleChange }) {
                       </span>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <p className="text-sm">$ {product.price}</p>
+                      <p className="text-sm">Rp{product.price}</p>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -117,23 +147,34 @@ export default function AddShoppingCart({ cart, setCart, handleChange }) {
           {/* Sub total */}
           <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3">
             <div className="mb-2 flex justify-between">
-              <p className="text-gray-700">Subtotal</p>
-              <p className="text-gray-700">${price}</p>
+              <p className="text-gray-700">Jumlah Total</p>
+              <p className="text-gray-700">Rp{price}</p>
             </div>
             <div className="flex justify-between">
-              <p className="text-gray-700">Shipping</p>
-              <p className="text-gray-700">$4.99</p>
+              <p className="text-gray-700">Pengemasan</p>
+              <p className="text-gray-700">Rp2000</p>
             </div>
-            <hr className="my-4" />
+            <hr className="my-2" />
+            <div className="flex justify-between">
+              <p className="text-gray-700">Jasa Ongkir </p>
+              <p className="text-gray-700 font-medium">Si ngebut</p>
+            </div>
+            <div className="flex justify-between">
+              <p className="text-gray-700">Biaya Ongkir</p>
+              <p className="text-gray-700">Rp15000</p>
+            </div>
+            <hr className="my-3" />
             <div className="flex justify-between">
               <p className="text-lg font-bold">Total</p>
               <div className="">
-                <p className="mb-1 text-lg font-bold">${price + 4.99} USD</p>
-                <p className="text-sm text-gray-700">including VAT</p>
+                <p className="mb-1 text-lg font-bold">Rp{price + 17000}</p>
               </div>
             </div>
-            <button className="mt-6 w-full rounded-md bg-teal-500 py-1.5 font-medium text-teal-50 hover:bg-teal-600">
-              Check out
+            <button
+              onClick={paymentGateWay}
+              className="mt-6 w-full rounded-md bg-teal-500 py-1.5 font-medium text-teal-50 hover:bg-teal-600"
+            >
+              Pesan
             </button>
           </div>
         </div>

@@ -1,8 +1,49 @@
-import { Outlet, NavLink, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Outlet, NavLink, Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import doctor from "../assets/doctor.png"
+import doctor from "../assets/doctor.png";
+import useConversation from "../zustand/useConversation";
+import Chat from "./Chat";
 export default function NavigationChat() {
+  const { selectedConversation, setSelectedConversation } = useConversation();
+  const [Doctor, setDoctor] = useState([]);
+  const { id } = useParams();
+  const isSelected = selectedConversation?._id === Doctor._id;
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/chatdoctor?_id=${id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setDoctor(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching doctors:", error);
+      });
+  }, []);
+
+  function paymentGateWay() {
+    fetch("http://localhost:5000/api/payment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+        total: Doctor.price,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        window.snap.pay(data.token);
+        // toast.success("Payment transaction created successfully!");
+      })
+      .catch((error) => {
+        console.error("Error creating transaction:", error);
+        // Tampilkan pesan kesalahan
+        toast.error("Failed to create payment transaction");
+      });
+  }
+
   return (
     <>
       <div className="flex flex-row h-full w-full overflow-x-hidden">
@@ -24,45 +65,38 @@ export default function NavigationChat() {
                 />
               </svg>
             </div>
-            <div className="ml-2 font-bold text-2xl">Chat</div>
+            <div className="ml-2 font-bold text-2xl">Konsultasi</div>
           </div>
           <div className="flex flex-col mt-8">
             <div className="flex flex-row items-center justify-between text-xs">
-              <Link to="/">
-                <button>
-                  <FontAwesomeIcon icon={faArrowLeft} />
-                  <span className="hover:underline hover:underline-offset-2">
-                    Kembali
-                  </span>
-                </button>
-              </Link>
-              <span className="font-bold">Active Conversations</span>
+              <button onClick={paymentGateWay}>
+                <FontAwesomeIcon icon={faArrowLeft} />
+                <span className="hover:underline hover:underline-offset-2">
+                  Selesai
+                </span>
+              </button>
+              <span className="font-bold">Aktif</span>
               <span className="flex items-center justify-center bg-gray-300 h-4 w-4 rounded-full">
                 1
               </span>
             </div>
-            <div className="flex flex-col space-y-1 mt-4 -mx-2 h-3/4 ">
-              <NavLink
-                to="id1"
-                className={({ isActive }) =>
-                  isActive
-                    ? "flex flex-row items-center hover:bg-gray-400 bg-gray-300 mr-5 rounded-xl p-2"
-                    : "flex flex-row items-center hover:bg-gray-400 rounded-xl p-2 mr-5 border border-gray-900"
-                }
-              >
-                <button className="flex items-center">
-                  <div className="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full">
-                    <img src={doctor} />
-                  </div>
-                  <div className="ml-2 text-sm font-semibold">
-                    Dokter HelloPet
-                  </div>
-                </button>
-              </NavLink>
-            </div>
+            <button onClick={() => setSelectedConversation(Doctor)}>
+              <div className="flex flex-col space-y-1 mt-4 -mx-2 h-3/4 ">
+                <div className="flex flex-row items-center hover:bg-gray-400 rounded-xl p-2 mr-5 border border-gray-900">
+                  <button className="flex items-center">
+                    <div className="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full">
+                      <img src={Doctor.Picture} />
+                    </div>
+                    <div className="ml-2 text-sm font-semibold">
+                      {Doctor.username}
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </button>
           </div>
         </div>
-        <Outlet />
+        {isSelected ? <Chat Doctor={Doctor} /> : ""}
       </div>
     </>
   );

@@ -12,13 +12,13 @@ export default function CardShopping({ products, handleClick }) {
         </h3>
         <div className="flex items-center flex-col gap-y-5 mt-5">
           <span className="text-3xl font-bold text-gray-900 dark:text-white">
-            ${price}
+            Rp{price}
           </span>
           <button
             onClick={() => handleClick(products)}
             className="text-white bg-teal-400 hover:bg-teal-600 focus:ring-4 focus:ring-teal-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center"
           >
-            Add to cart
+            Keranjang
           </button>
         </div>
       </div>

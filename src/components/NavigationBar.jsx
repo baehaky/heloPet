@@ -1,9 +1,25 @@
-import { NavLink, Outlet } from "react-router-dom";
-import { useState } from "react";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import logo from "../assets/10.png";
+import useLogout from "../hooks/useLogout";
+import toast, { Toaster } from "react-hot-toast";
 export default function NavigationBar(props) {
-  const [isAuthenticated, setisAuthenticated] = useState(true);
+  const navigate = useNavigate()
+  const { loading, logout } = useLogout();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const result = JSON.parse(localStorage.getItem("patient"));
+  const result1 = JSON.parse(localStorage.getItem("doctor"));
+  const result2 = JSON.parse(localStorage.getItem("seller"));
+  const result3 = JSON.parse(localStorage.getItem("admin"));
+  useEffect(() => {
+    if (result1) {
+      navigate("/doctor/dashboard");
+    } else if (result2) {
+      navigate("/seller/dashboard");
+    } else if (result3) {
+      navigate("/admin/dashboard");
+    }
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -59,7 +75,7 @@ export default function NavigationBar(props) {
                   : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
               }
             >
-              Home
+              Beranda
             </NavLink>
             <NavLink
               to="artikel"
@@ -70,7 +86,7 @@ export default function NavigationBar(props) {
                   : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
               }
             >
-              Article
+              Artikel
             </NavLink>
             <NavLink
               to="shop"
@@ -81,9 +97,9 @@ export default function NavigationBar(props) {
                   : " block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
               }
             >
-              Pet Care
+              Belanja
             </NavLink>
-            {isAuthenticated ? (
+            {result ? (
               <NavLink
                 to="cart"
                 onClick={toggleMobileMenu}
@@ -100,7 +116,7 @@ export default function NavigationBar(props) {
                 to="login"
                 className="text-white bg-teal-400 hover:bg-teal-500 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
               >
-                login
+                Masuk
               </NavLink>
             )}
           </div>
@@ -117,7 +133,7 @@ export default function NavigationBar(props) {
                       : " block py-2 px-3 text-gray-900 rounded font-medium font-serif hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
                   }
                 >
-                  Home
+                  Beranda
                 </NavLink>
               </li>
               <li>
@@ -129,7 +145,7 @@ export default function NavigationBar(props) {
                       : " block py-2 px-3 text-gray-900 rounded font-medium font-serif hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
                   }
                 >
-                  Article
+                  Artikel
                 </NavLink>
               </li>
               <li>
@@ -141,10 +157,10 @@ export default function NavigationBar(props) {
                       : " block py-2 px-3 text-gray-900 rounded font-medium font-serif hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
                   }
                 >
-                  Pet Care
+                  Belanja
                 </NavLink>
               </li>
-              {isAuthenticated ? (
+              {result ? (
                 <>
                   <li>
                     <NavLink
@@ -158,9 +174,9 @@ export default function NavigationBar(props) {
                       Keranjang {props.size}
                     </NavLink>
                   </li>
-                  {/* <li>
+                  <li>
                     <NavLink
-                      to="shop"
+                      to="listDoctor"
                       className={({ isActive }) =>
                         isActive
                           ? "block py-2 px-3 font-bold underline rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-teal-400  md:p-0"
@@ -169,26 +185,24 @@ export default function NavigationBar(props) {
                     >
                       Jadwal Dokter
                     </NavLink>
-                  </li> */}
+                  </li>
                   <li>
                     <button
-                      onClick={() => setisAuthenticated(true)}
+                      onClick={logout}
                       to="login"
                       type="button"
                       className="block text-white bg-teal-400 hover:bg-teal-500 font-medium rounded-lg text-sm px-4 py-2"
                     >
-                      Logout
+                      Keluar
                     </button>
                   </li>
                 </>
               ) : (
                 <li>
-                  <NavLink
-                    to="login"
-                    type="button"
-                    className="block text-white bg-teal-400 hover:bg-teal-500 font-medium rounded-lg text-sm px-4 py-2 md:p-0"
-                  >
-                    login
+                  <NavLink to="login">
+                    <button className="block text-white bg-teal-400 hover:bg-teal-500 font-medium rounded-lg text-sm px-5 py-2 ">
+                      Masuk
+                    </button>
                   </NavLink>
                 </li>
               )}
@@ -196,6 +210,7 @@ export default function NavigationBar(props) {
           </div>
         </div>
       </nav>
+      <Toaster />
       <Outlet />
     </>
   );

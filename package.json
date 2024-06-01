@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "": "file:..",
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -25,11 +26,16 @@
     "match-sorter": "^6.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
     "react-multi-carousel": "^2.8.4",
+    "react-quill": "^2.0.0",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.22.0",
+    "react-toastify": "^10.0.5",
     "react-wavify": "^1.10.0",
-    "sort-by": "^1.2.0"
+    "socket.io-client": "^4.7.5",
+    "sort-by": "^1.2.0",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

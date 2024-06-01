@@ -8,7 +8,7 @@ export default function BlogCard({ image, title, description }) {
       </h2>
       <p className="mb-4 text-gray-500 dark:text-gray-400">{description}</p>
       <p className="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
-        Read in 2 minutes
+        Baca dengan 2 menit
       </p>
     </article>
   );

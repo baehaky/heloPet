@@ -67,37 +67,37 @@ export default function ShoppingPage({ handleClick }) {
     {
       id: 1,
       name: "Felibite Mother and Kitten",
-      price: 50,
+      price: 19000,
       image: food1,
     },
     {
       id: 2,
       name: "Royal Canin",
-      price: 100,
+      price: 36000,
       image: food2,
     },
     {
       id: 3,
       name: "Nature’s Protection ",
-      price: 120,
+      price: 41000,
       image: food3,
     },
     {
       id: 4,
       name: "Wellness CORE Puppy ",
-      price: 150,
+      price: 21000,
       image: food4,
     },
     {
       id: 5,
       name: "Vitamin B",
-      price: 150,
+      price: 45000,
       image: drug1,
     },
     {
       id: 6,
       name: "Vitamin C",
-      price: 150,
+      price: 45000,
       image: drug2,
     },
   ];

@@ -16,15 +16,15 @@ export default function PetCarePage({ handleClick }) {
   }
   const options = {
     preferred: [
-      { id: 1, name: "Wet Food" },
-      { id: 2, name: "Dry Food" },
-      { id: 3, name: "Cat Sand" },
-      { id: 4, name: "Soaps" },
+      { id: 1, name: "Makanan Basah" },
+      { id: 2, name: "Makanan Kering" },
+      { id: 3, name: "Pasir Kucing" },
+      { id: 4, name: "Sabun" },
     ],
     dropdowns: [
-      { id: 1, name: "Recommended" },
-      { id: 2, name: "Size" },
-      { id: 3, name: "Price" },
+      { id: 1, name: "Rekomendasi" },
+      { id: 2, name: "Ukuran Barang" },
+      { id: 3, name: "Harga" },
     ],
     products: [
       {
@@ -70,7 +70,7 @@ export default function PetCarePage({ handleClick }) {
 
           <div className="mt-6 lg:mt-0 lg:px-2 lg:w-3/4 ">
             <div className="flex items-center justify-between text-sm tracking-widest uppercase ">
-              <p className="text-gray-500 dark:text-gray-300">6 Items</p>
+              <p className="text-gray-500 dark:text-gray-300">6 barang</p>
               <div className="flex items-center gap-x-5">
                 <p className="text-gray-500 dark:text-gray-300">Sort</p>
                 <select className="font-medium text-gray-700 bg-transparent dark:text-gray-500 focus:outline-none">
